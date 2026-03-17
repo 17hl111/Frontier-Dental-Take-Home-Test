@@ -5,10 +5,6 @@ __pycache__/
 playwright-report/
 .pytest_cache/
 logs/*.log
-output/*.db
-output/*.sqlite
-output/*.json
-output/*.csv
 !output/sample_products.json
 !output/sample_products.csv
 !logs/.gitkeep
