@@ -1,4 +1,6 @@
-# Summary: Shared constants used across scraping and classification logic.
+"""This module exists to centralize shared constants like HTTP headers and page type labels. 
+It keeps magic strings out of the agents and fetcher to reduce duplication. 
+Possible improvement: make these values configurable per site."""
 
 DEFAULT_HEADERS = {
     # Baseline headers to reduce basic bot blocking and caching artifacts.

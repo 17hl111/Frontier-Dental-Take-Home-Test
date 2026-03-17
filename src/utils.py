@@ -1,4 +1,6 @@
-# Summary: Shared helper functions for time, text, and URL normalization.
+"""This module exists to hold small reusable helpers for time, text, and URL normalization. 
+It can reduce repetition and keeps low level functions in one place. 
+Possible improvement: Add unit tests for edge cases."""
 
 from __future__ import annotations
 

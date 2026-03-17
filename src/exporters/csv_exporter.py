@@ -1,4 +1,4 @@
-# Summary: CSV exporter with light flattening of JSON-like fields.
+"""This module exists to export product records to CSV with light flattening. It makes outputs easy to open in spreadsheets. Possible improvement: provide configurable column selection and better nested flattening, but that was out of scope."""
 
 from __future__ import annotations
 

@@ -1,4 +1,11 @@
-# Summary: Heuristic page-type classifier for category vs product pages.
+"""
+Note: This module is not used for this prototype because I decided to use alternative ways to
+classify category and product (By allowing user to select category, so won't need to classifier but
+I think this is still a useful module for future use, so I keep this module.)
+This module exists to classify pages as category or product using simple heuristics. 
+It helps downstream logic reason about page type without heavy parsing. 
+Possible improvement: expand rules or add a learned classifier (Another possible way to use LLMs).
+"""
 
 from __future__ import annotations
 

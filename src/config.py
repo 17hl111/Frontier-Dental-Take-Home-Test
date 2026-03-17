@@ -1,4 +1,6 @@
-# Summary: Load YAML settings and merge in environment-based secrets.
+"""This module exists to load YAML settings and merge in environment secrets. 
+It keeps configuration parsing isolated so the rest of the code can depend on a simple dict. 
+Possible improvement: validate the config with a schema or pydantic model."""
 
 from __future__ import annotations
 

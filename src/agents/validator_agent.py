@@ -1,4 +1,4 @@
-# Summary: Validate normalized products and generate quality flags.
+"""This module exists to validate required fields and attach quality flags. It also checks for duplicates using normalized URLs. Possible improvement: add richer validation rules and consistency checks, but the prototype keeps validation lightweight."""
 
 from __future__ import annotations
 

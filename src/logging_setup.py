@@ -1,4 +1,4 @@
-# Summary: Centralized logger configuration for console and file output.
+"""This module exists to configure consistent logging across the application. It sets up both console and file handlers so runs are auditable. Possible improvement: add rotating log files and structured JSON logs, but that is out of scope for now."""
 
 from __future__ import annotations
 

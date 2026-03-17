@@ -1,4 +1,4 @@
-# Summary: CSS selector lists used for page discovery and extraction.
+"""This module exists to centralize CSS selectors used by the scraper. It keeps selector changes localized and easy to update. Possible improvement: make selectors site configurable instead of hard coded, but that is future work."""
 
 CATEGORY_PRODUCT_LINK_SELECTORS = [
     "a[href*='/product/']",

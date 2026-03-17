@@ -1,4 +1,6 @@
-# Summary: Pydantic models for crawl tasks, raw extraction, and normalized outputs.
+"""This module exists to define the structured data models used across the pipeline. 
+It provides a single source of truth for product fields and validation results. 
+Possible improvement: enforce stricter typing for specifications and nested fields."""
 
 from __future__ import annotations
 

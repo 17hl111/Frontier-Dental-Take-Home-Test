@@ -1,4 +1,6 @@
-# Summary: LLM-based run summary using products, QA report, and metrics.
+"""This module exists to generate a run level quality summary using an LLM. 
+It combines run metrics, products, and QA output into a concise report. 
+Possible improvement: add deterministic scoring alongside the LLM summary."""
 
 from __future__ import annotations
 
@@ -29,7 +31,7 @@ class CrawlSummaryAgent:
         output_file.parent.mkdir(parents=True, exist_ok=True)
 
         if self.client is None:
-            # Skip gracefully when LLM is unavailable.
+            # Skip when LLM is unavailable.
             summary = {
                 "status": "skipped",
                 "reason": "LLM disabled or OPENAI_API_KEY not configured.",

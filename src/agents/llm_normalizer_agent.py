@@ -1,4 +1,4 @@
-# Summary: LLM-based normalization for missing or weak product fields.
+"""This module exists to apply LLM based normalization when rule based extraction is weak or incomplete. It builds a structured prompt and merges only missing fields to keep deterministic data stable. Possible improvement: add caching and stricter validation of LLM outputs, but time did not allow it."""
 
 from __future__ import annotations
 

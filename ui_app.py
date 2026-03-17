@@ -1,4 +1,4 @@
-# Summary: Streamlit UI to configure categories and run the scraper.
+"""This module exists to provide a simple Streamlit UI for the scraper. It allows category discovery, selection, run control, and output review without the CLI. Possible improvement: add pagination for large outputs and richer progress reporting, but that is out of scope."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-# Summary: Discover category names and URLs from site navigation pages.
+"""This module exists to discover top level catalog categories from the target site. It parses navigation links and reduces them to /catalog/<category> entries. Possible improvement: use site specific selectors or a sitemap, but this prototype uses generic link scanning."""
 
 from __future__ import annotations
 

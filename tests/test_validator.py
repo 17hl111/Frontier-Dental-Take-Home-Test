@@ -1,4 +1,4 @@
-# Summary: Unit tests for product validation rules.
+"""This module exists to test the validator on a minimal valid product. It guards against regressions in required field handling. Possible improvement: add tests for duplicates and missing field flags, but that is not yet implemented."""
 
 from src.models import NormalizedProduct
 from src.agents.validator_agent import ValidatorAgent

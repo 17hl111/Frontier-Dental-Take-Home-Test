@@ -1,11 +1,11 @@
-# Summary: Playwright-based HTML fetcher with retries and pacing.
+"""This module exists to fetch HTML using Playwright with basic retry and pacing. It allows dynamic content to render before extraction. Possible improvement: reuse browser instances and block heavy resources, but the prototype keeps it simple."""
 
 from __future__ import annotations
 
 import time
 
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
-from tenacity import retry, stop_after_attempt, wait_exponential
+from tenacity import Retrying, stop_after_attempt, wait_exponential
 
 from ..constants import DEFAULT_HEADERS
 
@@ -20,9 +20,21 @@ class Fetcher:
         self.headless = settings["crawl"].get("headless", True)
         self.wait_for_ms = settings["crawl"].get("browser_wait_for_ms", 2500)
         self.user_agent = settings["crawl"]["user_agent"]
+        self.retry_attempts = int(settings["crawl"].get("retry_attempts", 3))
 
-    @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=1, max=8), reraise=True)
     def fetch_html(self, url: str) -> str:
+        # Retry attempts are controlled by settings.yaml (retry_attempts).
+        retrying = Retrying(
+            stop=stop_after_attempt(self.retry_attempts),
+            wait=wait_exponential(multiplier=1, min=1, max=8),
+            reraise=True,
+        )
+        for attempt in retrying:
+            with attempt:
+                return self._fetch_html_once(url)
+        raise RuntimeError(f"Exhausted retries for {url}")
+
+    def _fetch_html_once(self, url: str) -> str:
         # Lightweight throttle to reduce server load.
         self.logger.info("Fetching %s", url)
         time.sleep(self.delay)

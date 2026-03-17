@@ -1,4 +1,4 @@
-# Summary: Discover product links and pagination from category pages.
+"""This module exists to navigate category pages and discover product URLs and pagination. It keeps link extraction and next page logic separate from the runner. Possible improvement: handle more pagination patterns and add stronger page type validation, but that was not needed for the demo."""
 
 from __future__ import annotations
 

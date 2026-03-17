@@ -1,4 +1,6 @@
-# Summary: HTML parsing helpers for text, links, images, and JSON-LD data.
+"""This module exists to parse HTML and extract common elements like text, links, images, and JSON LD. 
+It provides consistent parsing utilities shared by agents. 
+Possible improvement: add more robust extraction for malformed HTML and richer cleaning."""
 
 from __future__ import annotations
 
@@ -12,7 +14,7 @@ from ..utils import normalize_whitespace, absolutize_url
 
 
 def parse_html(html: str) -> BeautifulSoup:
-    # Use lxml for speed and resilience.
+    # Use lxml engine for speed and resilience.
     return BeautifulSoup(html, "lxml")
 
 

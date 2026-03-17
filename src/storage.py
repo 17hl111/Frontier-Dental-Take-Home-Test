@@ -1,4 +1,4 @@
-# Summary: SQLite and checkpoint persistence for crawl results and state.
+"""This module exists to persist crawl state and product data in SQLite with checkpoint support. It allows resumable runs and consistent exports by reading from a single store. Possible improvement: add migrations and batch writes for performance, but that is deferred."""
 
 from __future__ import annotations
 
