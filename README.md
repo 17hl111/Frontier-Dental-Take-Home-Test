@@ -33,6 +33,16 @@ The system is composed of focused modules coordinated by a single runner:
 
 ---
 
+## Where AI Is Used
+
+AI is used selectively and only where it adds practical value:
+
+- **LLM Normalization**: `src/agents/llm_normalizer_agent.py` calls the LLM to fill missing or weak fields and to infer an adaptive `specifications` object from description text. This runs only when rule-based extraction is insufficient.
+- **QA Review**: `src/agents/qa_review_agent.py` sends the final product JSON to the LLM and asks it to flag only suspicious or low-confidence records.
+- **Crawl Quality Summary**: `src/agents/crawl_summary_agent.py` uses the LLM to summarize run-level quality, key issues, LLM impact, and next steps.
+
+No other parts of the pipeline rely on AI. Navigation, extraction, validation, storage, and exports are deterministic.
+
 ## Agent Responsibilities
 
 - **CategoryDiscoveryAgent**: Discover top-level `/catalog/<category>` pages from the site navigation.
