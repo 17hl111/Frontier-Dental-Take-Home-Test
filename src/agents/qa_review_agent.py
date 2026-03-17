@@ -1,4 +1,6 @@
-"""This module exists to run a post crawl QA pass using an LLM. It flags only suspicious records to focus manual review. Possible improvement: add sampling strategies and budget controls, but those were not prioritized."""
+"""This module exists to run a post crawl QA pass using an LLM. 
+It flags only suspicious records to focus manual review. 
+Possible improvement: add sampling strategies and budget controls."""
 
 from __future__ import annotations
 

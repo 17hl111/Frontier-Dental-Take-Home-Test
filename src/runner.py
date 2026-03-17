@@ -1,4 +1,6 @@
-"""This module exists to orchestrate the end to end crawl workflow. It coordinates category discovery, navigation, extraction, normalization, validation, persistence, and export steps. Possible improvement: separate scheduling from execution and add more robust concurrency control, but that is out of scope."""
+"""This module exists to orchestrate the end to end crawl workflow. 
+It coordinates category discovery, navigation, extraction, normalization, validation, persistence, and export steps. 
+Possible improvement: separate scheduling from execution and add more robust concurrency control."""
 
 from __future__ import annotations
 

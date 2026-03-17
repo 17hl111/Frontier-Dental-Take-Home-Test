@@ -4,19 +4,37 @@
     "https://www.safcodental.com/catalog/sutures-surgical-products"
   ],
   "completed_product_urls": [
+    "https://www.safcodental.com/product/alasta-sup-reg-sup-shimmer-pink-nitrile",
+    "https://www.safcodental.com/product/aurelia-reg-bold-reg",
+    "https://www.safcodental.com/product/beesure-ultraslim-nitrile",
+    "https://www.safcodental.com/product/bio-nitrile-sup-reg-sup",
+    "https://www.safcodental.com/product/black-maxx-sup-reg-sup",
+    "https://www.safcodental.com/product/carbon-reg-air",
     "https://www.safcodental.com/product/clearance-item",
+    "https://www.safcodental.com/product/gloveup-sup-reg-sup",
     "https://www.safcodental.com/product/halyard-black-nitrile",
+    "https://www.safcodental.com/product/healiaid-reg-strong-nbsp-strong-collagen",
+    "https://www.safcodental.com/product/heliplug-reg",
+    "https://www.safcodental.com/product/hemostat-sup-trade-sup",
     "https://www.safcodental.com/product/microflex-sup-reg-sup-neogard-trade-touch",
+    "https://www.safcodental.com/product/orasoothe-reg-sockit-gel",
+    "https://www.safcodental.com/product/ossif-i-sem-trade",
     "https://www.safcodental.com/product/ossify-sup-reg-sup-cortical-bone-sheet",
     "https://www.safcodental.com/product/ossify-sup-reg-sup-dbm-cortical-fiber-bone-graft",
-    "https://www.safcodental.com/product/ossify-sup-reg-sup-min-demin-cortical-cancellous-bone-graft"
+    "https://www.safcodental.com/product/ossify-sup-reg-sup-min-demin-cortical-cancellous-bone-graft",
+    "https://www.safcodental.com/product/perma-sharp-reg-sutures",
+    "https://www.safcodental.com/product/regenafill-sup-trade-sup-bone-graft-plug",
+    "https://www.safcodental.com/product/revosoft-reg-nitrile-gloves",
+    "https://www.safcodental.com/product/safco-surestitch-trade-sutures",
+    "https://www.safcodental.com/product/soft-tissue-trimmer",
+    "https://www.safcodental.com/product/true-comfort-reg-blu"
   ],
   "failed_product_urls": [],
   "stats": {
-    "scraped": 6,
+    "scraped": 24,
     "failed": 0,
-    "llm_calls": 5,
-    "llm_attempted": 6
+    "llm_calls": 23,
+    "llm_attempted": 24
   },
-  "updated_at": "2026-03-17T16:35:50+00:00"
+  "updated_at": "2026-03-17T17:02:35+00:00"
 }

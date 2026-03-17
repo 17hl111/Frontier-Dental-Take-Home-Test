@@ -1,4 +1,6 @@
-"""This module exists to export product records to JSON. It writes a full snapshot for downstream inspection and QA. Possible improvement: add streaming exports for large datasets, but the prototype focuses on simplicity."""
+"""This module exists to export product records to JSON. 
+It writes a full snapshot for downstream inspection and QA. 
+Possible improvement: add streaming exports for large datasets, but this prototype focuses on simplicity."""
 
 from __future__ import annotations
 

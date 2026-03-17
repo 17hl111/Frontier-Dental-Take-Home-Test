@@ -1,4 +1,6 @@
-"""This module exists to extract structured product fields from a product detail page. It prioritizes JSON LD and metadata, then falls back to selectors and simple heuristics. Possible improvement: add more selectors and site specific rules for edge cases, but that is left for future hardening."""
+"""This module exists to extract structured product fields from a product detail page. 
+It prioritizes JSON LD and metadata, then falls back to selectors and simple heuristics. 
+Possible improvement: add more selectors and site specific rules for edge cases."""
 
 from __future__ import annotations
 

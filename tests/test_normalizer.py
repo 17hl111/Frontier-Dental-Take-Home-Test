@@ -1,4 +1,6 @@
-"""This module exists to test LLM normalization guard logic. It ensures no API key means no LLM call. Possible improvement: add tests for merge behavior and structured specs, but time was limited."""
+"""This module exists to test LLM normalization guard logic. 
+It ensures no API key means no LLM call. 
+Possible improvement: add tests for merge behavior and structured specs."""
 
 from src.agents.llm_normalizer_agent import LLMNormalizerAgent
 from src.models import RawProductRecord

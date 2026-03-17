@@ -1,4 +1,6 @@
-"""This module exists to verify basic HTML parsing helpers. It provides a minimal regression check for selector extraction. Possible improvement: add more cases for malformed HTML and multiple selectors, but that is future work."""
+"""This module exists to verify basic HTML parsing helpers. 
+It provides a minimal regression check for selector extraction. 
+Possible improvement: add more cases for malformed HTML and multiple selectors."""
 
 from src.scraping.parser import parse_html, first_text
 

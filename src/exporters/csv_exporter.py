@@ -1,4 +1,6 @@
-"""This module exists to export product records to CSV with light flattening. It makes outputs easy to open in spreadsheets. Possible improvement: provide configurable column selection and better nested flattening, but that was out of scope."""
+"""This module exists to export product records to CSV with light flattening. 
+It makes outputs easy to open in EXCEL. 
+Possible improvement: provide configurable column selection and better nested flattening."""
 
 from __future__ import annotations
 

@@ -1,4 +1,6 @@
-"""This module exists to navigate category pages and discover product URLs and pagination. It keeps link extraction and next page logic separate from the runner. Possible improvement: handle more pagination patterns and add stronger page type validation, but that was not needed for the demo."""
+"""This module exists to navigate category pages and discover product URLs and pagination. 
+It keeps link extraction and next page logic separate from the runner. 
+Possible improvement: handle more pagination patterns and add stronger page type validation."""
 
 from __future__ import annotations
 

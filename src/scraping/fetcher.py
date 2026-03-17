@@ -1,4 +1,5 @@
-"""This module exists to fetch HTML using Playwright with basic retry and pacing. It allows dynamic content to render before extraction. Possible improvement: reuse browser instances and block heavy resources, but the prototype keeps it simple."""
+"""This module exists to fetch HTML using Playwright with basic retry and pacing. It allows dynamic content to render before extraction. 
+Possible improvement: reuse browser instances and block heavy resources."""
 
 from __future__ import annotations
 
@@ -58,7 +59,7 @@ class Fetcher:
                 except Exception:
                     pass
 
-                # Small scrolling to trigger lazy-loaded content.
+                # Small scrolling to trigger lazy-loaded content and Make the browsing behavior look more like a real human, reducing the chance of being detected by anti-scraping mechanisms.
                 page.wait_for_timeout(self.wait_for_ms)
                 page.mouse.wheel(0, 2500)
                 page.wait_for_timeout(1200)

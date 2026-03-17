@@ -1,4 +1,6 @@
-"""This module exists to configure consistent logging across the application. It sets up both console and file handlers so runs are auditable. Possible improvement: add rotating log files and structured JSON logs, but that is out of scope for now."""
+"""This module exists to configure consistent logging across the application. 
+It sets up both console and file handlers so runs are auditable. 
+Possible improvement: add rotating log files and structured JSON logs."""
 
 from __future__ import annotations
 
