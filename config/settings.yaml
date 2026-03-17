@@ -1,0 +1,40 @@
+site:
+  base_url: "https://www.safcodental.com"
+  categories:
+    - name: "Dental Exam Gloves"
+      url: "https://www.safcodental.com/catalog/gloves"
+    - name: "Sutures & Surgical Products"
+      url: "https://www.safcodental.com/catalog/sutures-surgical-products"
+
+crawl:
+  max_pages_per_category: 2
+  max_products_per_category: 12
+  request_delay_seconds: 1.2
+  retry_attempts: 3
+  timeout_seconds: 30
+  use_playwright: true
+  headless: true
+  browser_wait_for_ms: 2500
+  save_raw_html: true
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
+llm:
+  enabled: true
+  model: "gpt-4o-mini"
+  fallback_only: true
+  max_input_chars: 6000
+
+storage:
+  sqlite_path: "output/safco_products.db"
+  checkpoint_path: "data/checkpoints/state.json"
+
+output:
+  export_json: true
+  export_csv: true
+  export_sqlite: true
+  json_path: "output/sample_products.json"
+  csv_path: "output/sample_products.csv"
+
+logging:
+  level: "INFO"
+  file_path: "logs/scraper.log"

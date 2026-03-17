@@ -1,0 +1,70 @@
+rules:
+  # 1. 
+  - id: "header-fields-required"
+    severity: "error"
+    scope: "module-header"
+    description: "Provide key header fields (prefix, organization, contact, revision). Include a concise change summary per revision."
+    message: "Module header must include prefix, organization, contact, and at least one revision; each revision must include a concise change summary."
+    when: "!moduleHeaderFieldsOkNode(node, file)"
+
+  # 2. 
+  - id: "module-header-naming-convention"
+    severity: "warning"
+    scope: "module-header"
+    description: "Module name should follow TELUS naming convention and start with 'telus-'. update version test. yang-lint-met"
+    message: "Module name must start with 'telus-'. This is for default rules."
+    when: "!moduleNameHasTelusPrefixNode(node)"
+
+  # 3. 
+  - id: "namespace-nameing-convention"
+    severity: "error"
+    scope: "namespace"
+    description: "Namespace should follow TELUS naming convention and start with 'https://tinaa.telus.com'."
+    message: "Namespace must start with 'https://tinaa.telus.com'."
+    when: "!namespaceStartsWithTinaaNode(node)"
+
+  # 4. 
+  - id: "prefix-naming-convention"
+    severity: "error"
+    scope: "prefix"
+    description: "Module prefix should follow TELUS naming convention and start with 'telus-'."
+    message: "Module prefix must start with 'telus-'. This is for user customized rulesets." 
+    when: "!modulePrefixHasTelusPrefixNode(node, file)"
+
+  # 5. 
+  - id: "module-header-augdev-naming-convention"
+    severity: "error"
+    scope: "module-header"
+    description: "For telus-aug*/telus-dev* modules, module name must follow stricter TELUS naming conventions."
+    message: "For augmentation/deviation modules, module name must start with 'telus-aug' or 'telus-dev' respectively."
+    when: "strictAugDevModuleNameBadNode(node, file)"
+
+  # 6. 更严格（仅针对文件名 telus-aug*/telus-dev*）：namespace 必须以 aug/dev 专用前缀开头
+  - id: "namespace-augdev-naming-convention"
+    severity: "error"
+    scope: "namespace"
+    description: "For telus-aug*/telus-dev* modules, namespace must follow stricter TELUS naming conventions."
+    message: "For augmentation/deviation modules, namespace must start with 'https://tinaa.telus.com/yang/aug' or 'https://tinaa.telus.com/yang/dev'."
+    when: "strictAugDevNamespaceBadNode(node, file)"
+
+  # 7. 更严格（仅针对文件名 telus-aug*/telus-dev*）：模块 prefix 以 telus-aug / telus-dev 开头（错误挂在 prefix 行）
+  - id: "prefix-augdev-naming-convention"
+    severity: "error"
+    scope: "prefix"
+    description: "For telus-aug*/telus-dev* modules, the module prefix must start with 'telus-aug' or 'telus-dev' respectively."
+    message: "Module prefix for augmentation/deviation modules must start with the expected 'telus-aug' or 'telus-dev' prefix."
+    when: "augDevPrefixNamingBad(node, file)"
+
+  - id: baseline-deprecated-node-migration-guidance
+    severity: info
+    scope: status
+    description: >
+      When a node is marked deprecated or obsolete, authors should provide
+      clear migration guidance: the replacement node/path, equivalent
+      configuration, or decommission / removal steps.
+    message: >
+      [INFO·baseline] When a node is marked deprecated or obsolete, include
+      migration guidance: replacement node/path, equivalent configuration,
+      or decommission steps.
+    # Engine does not evaluate `when` for info rules, but schema requires it
+    when: "true"

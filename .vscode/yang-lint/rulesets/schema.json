@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "YANG Lint Rules v2",
+  "type": "object",
+  "properties": {
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "severity", "scope", "description", "message", "when"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "severity": { "type": "string", "enum": ["info", "warning", "error"] },
+          "scope": {
+            "type": "string",
+            "enum": [
+              "module-header",
+              "import",
+              "typedef",
+              "list",
+              "container",
+              "augment",
+              "deviation",
+              "status",
+              "constraint-node",
+              "choice",
+              "anyxml",
+              "extension",
+              "feature",
+              "notification",
+              "rpc",
+              "leaf",
+              "leaf-list",
+              "namespace",
+              "prefix"
+            ]
+          },
+          "description": { "type": "string", "minLength": 1 },
+          "message": { "type": "string", "minLength": 1 },
+          "when": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["rules"],
+  "additionalProperties": false
+}

@@ -1,0 +1,82 @@
+rules:
+  - id: "aug-dev-description-required"
+    severity: "warning"
+    scope: "augment"
+    description: "Augment statements must have a description to explain their purpose."
+    message: "Augment is missing a description statement."
+    when: "!hasDescriptionInBlock(node, file)"
+
+  - id: "aug-dev-description-required"
+    severity: "warning"
+    scope: "deviation"
+    description: "Deviation statements must have a description to explain why the deviation exists."
+    message: "Deviation is missing a description statement."
+    when: "!hasDescriptionInBlock(node, file)"
+
+  - id: "mandatory-leaf-under-presence-container"
+    severity: "warning"
+    scope: "leaf"
+    description: "If there is a mandatory leaf, the leaf should be placed under a presence container."
+    message: "Mandatory leaf should be placed under a presence container with a 'presence' statement."
+    when: "mandatoryLeafNotUnderPresenceContainer(node, file)"
+
+  - id: "key-leaf-description-required"
+    severity: "error"
+    scope: "leaf"
+    description: "Key leaf nodes must have a description within the first 5 lines of their definition."
+    message: "Key leaf must have a description within the first 5 lines of its definition."
+    when: "keyLeafDescriptionMissingWithin5Lines(node, file)"
+
+  - id: "import-prefix-first-in-block"
+    severity: "error"
+    scope: "import"
+    description: "When using block-form import (with braces), you must explicitly declare a prefix, and it should appear first in the block, before other substatements."
+    message: "Block-form import must declare a prefix, and the prefix statement must be the first substatement in the block."
+    when: "importBlockPrefixNotFirstOrMissing(node, file)"
+
+  - id: "leaf-list-simple-scalar-only"
+    severity: "warning"
+    scope: "leaf-list"
+    description: "When collection elements need attributes, keys, or expandable structure, use a list, not a leaf-list. A leaf-list is suitable only for simple scalar collections without extra attributes."
+    message: "Review this leaf-list: when collection elements need attributes, keys, or expandable structure, model them as a list instead. A leaf-list should be used only for simple scalar collections without extra attributes."
+    when: "true"
+
+  - id: "device-ni-outer-list-required"
+    severity: "warning"
+    scope: "container"
+    description: "Use an outer list to encapsulate devices or network-instances in new models instead of modeling them as bare containers."
+    message: "This container looks like device/NI encapsulation; model it as an outer list with keys instead of a bare container."
+    when: "deviceNiContainerShouldUseOuterList(node, file)"
+
+  - id: "shell-root-description-required-container"
+    severity: "warning"
+    scope: "container"
+    description: "Outer containers used purely as encapsulation shells (shell-roots) should include a description that clearly states their purpose and scope."
+    message: "This container looks like an encapsulation shell (shell-root) with no direct leaf content; add a description explaining its purpose and scope."
+    when: "shellRootMissingDescription(node, file)"
+
+  - id: "shell-root-description-required-list"
+    severity: "warning"
+    scope: "list"
+    description: "Outer lists used purely as encapsulation shells (shell-roots) should include a description that clearly states their purpose and scope."
+    message: "This list looks like an encapsulation shell (shell-root) with no direct leaf content; add a description explaining its purpose and scope."
+    when: "shellRootMissingDescription(node, file)"
+
+  - id: "info-device-patterns"
+    severity: "info"
+    scope: "module-header"
+    description: "Guidance for device modeling in create mode."
+    message: "Use outer list for device/NI encapsulation in new models; see internal guidelines."
+    when: "true"
+
+  - id: create-prefer-grouping-reuse-in-augmentation-modules
+    severity: info
+    scope: augment
+    description: >
+      Prefer reusing existing groupings when designing augmentation modules,
+      instead of redefining similar structures from scratch.
+    message: >
+      [INFO·create] Prefer grouping reuse in augmentation modules. Reuse
+      existing groupings where possible instead of redefining similar data
+      structures.
+    when: "true"

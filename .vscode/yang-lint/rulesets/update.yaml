@@ -1,0 +1,169 @@
+rules:
+  - id: "no-stricter-update"
+    severity: "warning"
+    scope: "leaf"
+    description: "During update, do not make the value constraints (range or length) stricter than in the baseline for published leaves."
+    message: "Value constraints (range/length) were made stricter than the baseline for this leaf; this breaks backward compatibility."
+    when: "constraintsBecameStricterForNode(node, file, baseline)"
+
+  - id: "no-stricter-update-leaflist"
+    severity: "warning"
+    scope: "leaf-list"
+    description: "During update, do not make the value constraints (range or length) stricter than in the baseline for published leaf-lists."
+    message: "Leaf-list constraints (range/length) were made stricter than the baseline for this leaf-list; this breaks backward compatibility."
+    when: "constraintsBecameStricterForNode(node, file, baseline)"
+
+  - id: "no-stricter-update-typedef"
+    severity: "warning"
+    scope: "typedef"
+    description: "During update, do not make the value constraints (range or length) stricter than in the baseline for published typedefs."
+    message: "Typedef constraints (range/length) were made stricter than the baseline for this typedef; this breaks backward compatibility."
+    when: "constraintsBecameStricterForNode(node, file, baseline)"
+
+  - id: "update-all-prefix-ref-module"
+    severity: "warning"
+    scope: "module-header"
+    description: "When changing the module prefix in an update, update all references using that prefix to prevent dangling or mis-qualified names."
+    message: "Module prefix changed compared to the baseline, but the old prefix is still used in this module."
+    when: "modulePrefixChangedButRefsNotUpdatedNode(node, file, baseline)"
+
+  - id: "update-all-prefix-ref-import"
+    severity: "warning"
+    scope: "import"
+    description: "When changing an import prefix in an update, update all references using that prefix to prevent dangling or mis-qualified names."
+    message: "Import prefix changed compared to the baseline, but the old prefix is still used in this module."
+    when: "importPrefixChangedButRefsNotUpdated(node, file, baseline)"
+
+  - id: "mandatory-node-guarding-required"
+    severity: "error"
+    scope: "leaf"
+    description: "During update, a new mandatory leaf or a leaf that becomes mandatory must be guarded by a feature flag or a presence container to limit the impact."
+    message: "New or flipped mandatory leaf must be guarded by a feature flag or a presence container to limit impact on existing deployments."
+    when: "newMandatoryNotGuarded(node, file, baseline)"
+
+  - id: "state-node-config-mandatory"
+    severity: "error"
+    scope: "leaf"
+    description: "Do not switch a read-only state leaf from config false in the baseline to a mandatory config leaf in the updated model."
+    message: "Do not switch a read-only state leaf to mandatory config; use a parallel node with migration guidance instead."
+    when: "stateToConfigMandatoryBad(node, file, baseline)"
+
+  - id: "material-change-requires-revision-reference-leaf"
+    severity: "error"
+    scope: "leaf"
+    description: "For material changes to a published leaf, add a new revision and update the reference in the changed leaf's description/comments for traceability."
+    message: "Material change to a published leaf without updated module revision and reference in this leaf's description/comments."
+    when: "materialChangeMissingRevisionRef(node, file, baseline)"
+
+  - id: "material-change-requires-revision-reference-leaflist"
+    severity: "error"
+    scope: "leaf-list"
+    description: "For material changes to a published leaf-list, add a new revision and update the reference in the changed block's description/comments for traceability."
+    message: "Material change to a published leaf-list without updated module revision and reference in this block's description/comments."
+    when: "materialChangeMissingRevisionRef(node, file, baseline)"
+
+  - id: "material-change-requires-revision-reference-container"
+    severity: "error"
+    scope: "container"
+    description: "For material changes to a published container, add a new revision and update the reference in the changed container's description/comments for traceability."
+    message: "Material change to a published container without updated module revision and reference in this container's description/comments."
+    when: "materialChangeMissingRevisionRef(node, file, baseline)"
+
+  - id: "material-change-requires-revision-reference-list"
+    severity: "error"
+    scope: "list"
+    description: "For material changes to a published list, add a new revision and update the reference in the changed list's description/comments for traceability."
+    message: "Material change to a published list without updated module revision and reference in this list's description/comments."
+    when: "materialChangeMissingRevisionRef(node, file, baseline)"
+
+  - id: "material-change-requires-revision-reference-typedef"
+    severity: "error"
+    scope: "typedef"
+    description: "For material changes to a published typedef, add a new revision and update the reference in the changed typedef's description/comments for traceability."
+    message: "Material change to a published typedef without updated module revision and reference in this typedef's description/comments."
+    when: "materialChangeMissingRevisionRef(node, file, baseline)"
+
+  - id: "material-change-requires-revision-reference-augment"
+    severity: "error"
+    scope: "augment"
+    description: "For material changes to a published augment, add a new revision and update the reference in the changed block's description/comments for traceability."
+    message: "Material change to a published augment without updated module revision and reference in this block's description/comments."
+    when: "materialChangeMissingRevisionRef(node, file, baseline)"
+
+  - id: "material-change-requires-revision-reference-deviation"
+    severity: "error"
+    scope: "deviation"
+    description: "For material changes to a published deviation, add a new revision and update the reference in the changed block's description/comments for traceability."
+    message: "Material change to a published deviation without updated module revision and reference in this block's description/comments."
+    when: "materialChangeMissingRevisionRef(node, file, baseline)"
+
+  - id: "material-change-requires-revision-reference-rpc"
+    severity: "error"
+    scope: "rpc"
+    description: "For material changes to a published RPC, add a new revision and update the reference in the changed RPC's description/comments for traceability."
+    message: "Material change to a published RPC without updated module revision and reference in this RPC's description/comments."
+    when: "materialChangeMissingRevisionRef(node, file, baseline)"
+
+  - id: "material-change-requires-revision-reference-notification"
+    severity: "error"
+    scope: "notification"
+    description: "For material changes to a published notification, add a new revision and update the reference in the changed notification's description/comments for traceability."
+    message: "Material change to a published notification without updated module revision and reference in this notification's description/comments."
+    when: "materialChangeMissingRevisionRef(node, file, baseline)"
+
+  - id: "no-remove-obsolete-definitions"
+    severity: "warning"
+    scope: "module-header"
+    description: "During update, do not remove definitions that were marked as obsolete in the baseline model; keep obsolete definitions for backward compatibility and traceability."
+    message: "One or more obsolete definitions from the baseline have been removed in this module; obsolete definitions must be kept rather than removed."
+    when: "obsoleteDefinitionsRemovedNode(node, file, baseline)"
+
+
+  - id: update-inline-to-grouping-semantic-equivalent
+    severity: info
+    scope: container
+    description: >
+      During update, if you refactor an existing inline node set into a
+      grouping and reference it via 'uses', the resulting model should be
+      semantically equivalent to the original inline definition.
+    message: >
+      [INFO·update] During update, if you refactor an existing inline node
+      set into a grouping and pull it in via 'uses', the result must be
+      semantically equivalent to the original inline definition.
+    when: "true"
+
+  - id: update-state-to-config-safe-guard
+    severity: info
+    scope: leaf
+    description: >
+      Only switch a read-only state node to config when it does not change
+      existing behavior and the node is non-mandatory. Otherwise, prefer
+      introducing a parallel config node with clear migration guidance.
+    message: >
+      [INFO·update] Only switch a read-only state node to config when it
+      doesn’t affect existing behavior and the node is non-mandatory;
+      otherwise use a parallel node with migration guidance.
+    when: "true"
+
+  - id: update-type-change-semantic-compatibility
+    severity: info
+    scope: leaf
+    description: >
+      During update, replacing a node’s type or swapping a typedef must
+      preserve semantics and compatibility: do not tighten the value domain
+      (see Rule 22 on range/length/pattern), and do not change the meaning,
+      units, or scale of values or invalidate existing configurations.
+    message: >
+      [INFO·update] During update, replacing a node’s type or swapping a
+      typedef must preserve semantics and compatibility: do not tighten the
+      value domain (see Rule 22 on range/length/pattern), and do not change
+      the meaning/units/scale of values or invalidate existing configs.
+    when: "true"
+
+
+  - id: "update-no-ro-rw-toggle"
+    severity: "warning"
+    scope: "leaf"
+    description: "During update, do not change a read-only (RO) node to read-write (RW) or vice versa; such changes break client assumptions, tooling, and automation."
+    message: "Do not change read-only (RO) to read-write (RW) or vice versa; it breaks client assumptions and automation."
+    when: "roRwToggleBad(node, file, baseline)"

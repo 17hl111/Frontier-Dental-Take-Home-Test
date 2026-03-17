@@ -1,0 +1,17 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        ".vscode/yang-lint": true,
+        ".vscode/yang-lint/**": true,
+        ".vscode/helper_function": true,
+        ".vscode/helper_function/**": true,
+        "**/.vscode/yang-lint": true,
+        "**/.vscode/yang-lint/**": true,
+        "**/.vscode/helper_function": true,
+        "**/.vscode/helper_function/**": true
+    }
+}
