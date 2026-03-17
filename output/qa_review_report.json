@@ -3,36 +3,38 @@
   "flagged_products": 20,
   "reviews": [
     {
-      "product_url": "https://www.safcodental.com/product/healiaid-reg-strong-nbsp-strong-collagen",
-      "review_status": "needs_review",
-      "confidence": "medium",
-      "issues": [
-        {
-          "field": "sku",
-          "severity": "high",
-          "reason": "SKU is labeled as 'Product Name', which is not a valid SKU."
-        }
-      ],
-      "suggested_checks": [
-        "Verify SKU format and content."
-      ],
-      "summary": "SKU field contains a placeholder value instead of a valid SKU."
-    },
-    {
       "product_url": "https://www.safcodental.com/product/heliplug-reg",
       "review_status": "needs_review",
       "confidence": "medium",
       "issues": [
         {
-          "field": "sku",
+          "field": "manufacturer",
           "severity": "high",
-          "reason": "SKU is labeled as 'Product Name', which is not a valid SKU."
+          "reason": "Manufacturer field is null, which is critical for product identification."
         }
       ],
       "suggested_checks": [
-        "Verify SKU format and content."
+        "Verify manufacturer information",
+        "Check for additional product details"
       ],
-      "summary": "SKU field contains a placeholder value instead of a valid SKU."
+      "summary": "Missing manufacturer information."
+    },
+    {
+      "product_url": "https://www.safcodental.com/product/regenafill-sup-trade-sup-bone-graft-plug",
+      "review_status": "needs_review",
+      "confidence": "medium",
+      "issues": [
+        {
+          "field": "manufacturer",
+          "severity": "high",
+          "reason": "Manufacturer field is null, which is critical for product identification."
+        }
+      ],
+      "suggested_checks": [
+        "Verify manufacturer information",
+        "Check for additional product details"
+      ],
+      "summary": "Missing manufacturer information."
     },
     {
       "product_url": "https://www.safcodental.com/product/safco-surestitch-trade-sutures",
@@ -42,13 +44,14 @@
         {
           "field": "product_code",
           "severity": "high",
-          "reason": "Product code is null, which is critical for product identification."
+          "reason": "Product code is null, which is essential for product tracking."
         }
       ],
       "suggested_checks": [
-        "Check if product code is available in the source data."
+        "Verify product code",
+        "Check for additional product details"
       ],
-      "summary": "Missing product code which is essential for product identification."
+      "summary": "Missing product code."
     },
     {
       "product_url": "https://www.safcodental.com/product/perma-sharp-reg-sutures",
@@ -56,15 +59,16 @@
       "confidence": "medium",
       "issues": [
         {
-          "field": "brand",
+          "field": "manufacturer",
           "severity": "high",
-          "reason": "Brand is null, which is important for product authenticity."
+          "reason": "Manufacturer field is null, which is critical for product identification."
         }
       ],
       "suggested_checks": [
-        "Verify brand information from the source."
+        "Verify manufacturer information",
+        "Check for additional product details"
       ],
-      "summary": "Brand information is missing, affecting product authenticity."
+      "summary": "Missing manufacturer information."
     },
     {
       "product_url": "https://www.safcodental.com/product/soft-tissue-trimmer",
@@ -72,15 +76,16 @@
       "confidence": "medium",
       "issues": [
         {
-          "field": "raw_specifications_text",
-          "severity": "medium",
-          "reason": "Raw specifications text is null, which may indicate incomplete data extraction."
+          "field": "manufacturer",
+          "severity": "high",
+          "reason": "Manufacturer field is null, which is critical for product identification."
         }
       ],
       "suggested_checks": [
-        "Check for specifications in the source data."
+        "Verify manufacturer information",
+        "Check for additional product details"
       ],
-      "summary": "Raw specifications text is missing, indicating potential extraction issues."
+      "summary": "Missing manufacturer information."
     },
     {
       "product_url": "https://www.safcodental.com/product/hemostat-sup-trade-sup",
@@ -88,31 +93,16 @@
       "confidence": "medium",
       "issues": [
         {
-          "field": "brand",
+          "field": "manufacturer",
           "severity": "high",
-          "reason": "Brand is null, which is critical for product identification."
+          "reason": "Manufacturer field is null, which is critical for product identification."
         }
       ],
       "suggested_checks": [
-        "Verify brand information from the source."
+        "Verify manufacturer information",
+        "Check for additional product details"
       ],
-      "summary": "Brand information is missing, affecting product identification."
-    },
-    {
-      "product_url": "https://www.safcodental.com/product/orasoothe-reg-sockit-gel",
-      "review_status": "needs_review",
-      "confidence": "medium",
-      "issues": [
-        {
-          "field": "product_code",
-          "severity": "high",
-          "reason": "Product code is null, which is critical for product identification."
-        }
-      ],
-      "suggested_checks": [
-        "Check if product code is available in the source data."
-      ],
-      "summary": "Missing product code which is essential for product identification."
+      "summary": "Missing manufacturer information."
     },
     {
       "product_url": "https://www.safcodental.com/product/ossif-i-sem-trade",
@@ -120,47 +110,16 @@
       "confidence": "medium",
       "issues": [
         {
-          "field": "product_code",
+          "field": "manufacturer",
           "severity": "high",
-          "reason": "Product code is null, which is critical for product identification."
+          "reason": "Manufacturer field is null, which is critical for product identification."
         }
       ],
       "suggested_checks": [
-        "Check if product code is available in the source data."
+        "Verify manufacturer information",
+        "Check for additional product details"
       ],
-      "summary": "Missing product code which is essential for product identification."
-    },
-    {
-      "product_url": "https://www.safcodental.com/product/ossify-sup-reg-sup-dbm-cortical-fiber-bone-graft",
-      "review_status": "needs_review",
-      "confidence": "medium",
-      "issues": [
-        {
-          "field": "product_code",
-          "severity": "high",
-          "reason": "Product code is null, which is critical for product identification."
-        }
-      ],
-      "suggested_checks": [
-        "Check if product code is available in the source data."
-      ],
-      "summary": "Missing product code which is essential for product identification."
-    },
-    {
-      "product_url": "https://www.safcodental.com/product/ossify-sup-reg-sup-min-demin-cortical-cancellous-bone-graft",
-      "review_status": "needs_review",
-      "confidence": "medium",
-      "issues": [
-        {
-          "field": "product_code",
-          "severity": "high",
-          "reason": "Product code is null, which is critical for product identification."
-        }
-      ],
-      "suggested_checks": [
-        "Check if product code is available in the source data."
-      ],
-      "summary": "Missing product code which is essential for product identification."
+      "summary": "Missing manufacturer information."
     },
     {
       "product_url": "https://www.safcodental.com/product/ossify-sup-reg-sup-cortical-bone-sheet",
@@ -168,31 +127,50 @@
       "confidence": "medium",
       "issues": [
         {
-          "field": "product_code",
+          "field": "manufacturer",
           "severity": "high",
-          "reason": "Product code is null, which is critical for product identification."
+          "reason": "Manufacturer field is null, which is critical for product identification."
         }
       ],
       "suggested_checks": [
-        "Check if product code is available in the source data."
+        "Verify manufacturer information",
+        "Check for additional product details"
       ],
-      "summary": "Missing product code which is essential for product identification."
+      "summary": "Missing manufacturer information."
     },
     {
-      "product_url": "https://www.safcodental.com/product/aurelia-reg-bold-reg",
+      "product_url": "https://www.safcodental.com/product/ossify-sup-reg-sup-dbm-cortical-fiber-bone-graft",
       "review_status": "needs_review",
       "confidence": "medium",
       "issues": [
         {
-          "field": "product_code",
+          "field": "manufacturer",
           "severity": "high",
-          "reason": "Product code is null, which is critical for product identification."
+          "reason": "Manufacturer field is null, which is critical for product identification."
         }
       ],
       "suggested_checks": [
-        "Check if product code is available in the source data."
+        "Verify manufacturer information",
+        "Check for additional product details"
       ],
-      "summary": "Missing product code which is essential for product identification."
+      "summary": "Missing manufacturer information."
+    },
+    {
+      "product_url": "https://www.safcodental.com/product/ossify-sup-reg-sup-min-demin-cortical-cancellous-bone-graft",
+      "review_status": "needs_review",
+      "confidence": "medium",
+      "issues": [
+        {
+          "field": "manufacturer",
+          "severity": "high",
+          "reason": "Manufacturer field is null, which is critical for product identification."
+        }
+      ],
+      "suggested_checks": [
+        "Verify manufacturer information",
+        "Check for additional product details"
+      ],
+      "summary": "Missing manufacturer information."
     },
     {
       "product_url": "https://www.safcodental.com/product/revosoft-reg-nitrile-gloves",
@@ -202,13 +180,31 @@
         {
           "field": "product_code",
           "severity": "high",
-          "reason": "Product code is null, which is critical for product identification."
+          "reason": "Product code is null, which is essential for product tracking."
         }
       ],
       "suggested_checks": [
-        "Check if product code is available in the source data."
+        "Verify product code",
+        "Check for additional product details"
       ],
-      "summary": "Missing product code which is essential for product identification."
+      "summary": "Missing product code."
+    },
+    {
+      "product_url": "https://www.safcodental.com/product/aurelia-reg-bold-reg",
+      "review_status": "needs_review",
+      "confidence": "medium",
+      "issues": [
+        {
+          "field": "product_code",
+          "severity": "high",
+          "reason": "Product code is null, which is essential for product tracking."
+        }
+      ],
+      "suggested_checks": [
+        "Verify product code",
+        "Check for additional product details"
+      ],
+      "summary": "Missing product code."
     },
     {
       "product_url": "https://www.safcodental.com/product/alasta-sup-reg-sup-shimmer-pink-nitrile",
@@ -218,13 +214,14 @@
         {
           "field": "product_code",
           "severity": "high",
-          "reason": "Product code is null, which is critical for product identification."
+          "reason": "Product code is null, which is essential for product tracking."
         }
       ],
       "suggested_checks": [
-        "Check if product code is available in the source data."
+        "Verify product code",
+        "Check for additional product details"
       ],
-      "summary": "Missing product code which is essential for product identification."
+      "summary": "Missing product code."
     },
     {
       "product_url": "https://www.safcodental.com/product/beesure-ultraslim-nitrile",
@@ -232,31 +229,16 @@
       "confidence": "medium",
       "issues": [
         {
-          "field": "product_code",
+          "field": "manufacturer",
           "severity": "high",
-          "reason": "Product code is null, which is critical for product identification."
+          "reason": "Manufacturer field is null, which is critical for product identification."
         }
       ],
       "suggested_checks": [
-        "Check if product code is available in the source data."
+        "Verify manufacturer information",
+        "Check for additional product details"
       ],
-      "summary": "Missing product code which is essential for product identification."
-    },
-    {
-      "product_url": "https://www.safcodental.com/product/carbon-reg-air",
-      "review_status": "needs_review",
-      "confidence": "medium",
-      "issues": [
-        {
-          "field": "product_code",
-          "severity": "high",
-          "reason": "Product code is null, which is critical for product identification."
-        }
-      ],
-      "suggested_checks": [
-        "Check if product code is available in the source data."
-      ],
-      "summary": "Missing product code which is essential for product identification."
+      "summary": "Missing manufacturer information."
     },
     {
       "product_url": "https://www.safcodental.com/product/bio-nitrile-sup-reg-sup",
@@ -266,93 +248,14 @@
         {
           "field": "product_code",
           "severity": "high",
-          "reason": "Product code is null, which is critical for product identification."
+          "reason": "Product code is null, which is essential for product tracking."
         }
       ],
       "suggested_checks": [
-        "Check if product code is available in the source data."
+        "Verify product code",
+        "Check for additional product details"
       ],
-      "summary": "Missing product code which is essential for product identification."
-    },
-    {
-      "product_url": "https://www.safcodental.com/product/gloveup-sup-reg-sup",
-      "review_status": "needs_review",
-      "confidence": "medium",
-      "issues": [
-        {
-          "field": "product_code",
-          "severity": "high",
-          "reason": "Product code is null, which is critical for product identification."
-        }
-      ],
-      "suggested_checks": [
-        "Check if product code is available in the source data."
-      ],
-      "summary": "Missing product code which is essential for product identification."
-    },
-    {
-      "product_url": "https://www.safcodental.com/product/black-maxx-sup-reg-sup",
-      "review_status": "needs_review",
-      "confidence": "medium",
-      "issues": [
-        {
-          "field": "product_code",
-          "severity": "high",
-          "reason": "Product code is null, which is critical for product identification."
-        }
-      ],
-      "suggested_checks": [
-        "Check if product code is available in the source data."
-      ],
-      "summary": "Missing product code which is essential for product identification."
-    },
-    {
-      "product_url": "https://www.safcodental.com/product/true-comfort-reg-blu",
-      "review_status": "needs_review",
-      "confidence": "medium",
-      "issues": [
-        {
-          "field": "product_code",
-          "severity": "high",
-          "reason": "Product code is null, which is critical for product identification."
-        }
-      ],
-      "suggested_checks": [
-        "Check if product code is available in the source data."
-      ],
-      "summary": "Missing product code which is essential for product identification."
-    },
-    {
-      "product_url": "https://www.safcodental.com/product/halyard-black-nitrile",
-      "review_status": "needs_review",
-      "confidence": "medium",
-      "issues": [
-        {
-          "field": "product_code",
-          "severity": "high",
-          "reason": "Product code is null, which is critical for product identification."
-        }
-      ],
-      "suggested_checks": [
-        "Check if product code is available in the source data."
-      ],
-      "summary": "Missing product code which is essential for product identification."
-    },
-    {
-      "product_url": "https://www.safcodental.com/product/microflex-sup-reg-sup-neogard-trade-touch",
-      "review_status": "needs_review",
-      "confidence": "medium",
-      "issues": [
-        {
-          "field": "product_code",
-          "severity": "high",
-          "reason": "Product code is null, which is critical for product identification."
-        }
-      ],
-      "suggested_checks": [
-        "Check if product code is available in the source data."
-      ],
-      "summary": "Missing product code which is essential for product identification."
+      "summary": "Missing product code."
     },
     {
       "product_url": "https://www.safcodental.com/product/clearance-item",
@@ -362,15 +265,67 @@
         {
           "field": "specifications_json",
           "severity": "high",
-          "reason": "Specifications are empty, which is critical for product details."
+          "reason": "Specifications field is empty, which is critical for product details."
         }
       ],
       "suggested_checks": [
-        "Verify if specifications are available in the source data."
+        "Verify specifications",
+        "Check for additional product details"
       ],
-      "summary": "Specifications are missing, affecting product details."
+      "summary": "Missing specifications."
+    },
+    {
+      "product_url": "https://www.safcodental.com/product/true-comfort-reg-blu",
+      "review_status": "needs_review",
+      "confidence": "medium",
+      "issues": [
+        {
+          "field": "manufacturer",
+          "severity": "high",
+          "reason": "Manufacturer field is null, which is critical for product identification."
+        }
+      ],
+      "suggested_checks": [
+        "Verify manufacturer information",
+        "Check for additional product details"
+      ],
+      "summary": "Missing manufacturer information."
+    },
+    {
+      "product_url": "https://www.safcodental.com/product/halyard-black-nitrile",
+      "review_status": "needs_review",
+      "confidence": "medium",
+      "issues": [
+        {
+          "field": "manufacturer",
+          "severity": "high",
+          "reason": "Manufacturer field is null, which is critical for product identification."
+        }
+      ],
+      "suggested_checks": [
+        "Verify manufacturer information",
+        "Check for additional product details"
+      ],
+      "summary": "Missing manufacturer information."
+    },
+    {
+      "product_url": "https://www.safcodental.com/product/microflex-sup-reg-sup-neogard-trade-touch",
+      "review_status": "needs_review",
+      "confidence": "medium",
+      "issues": [
+        {
+          "field": "manufacturer",
+          "severity": "high",
+          "reason": "Manufacturer field is null, which is critical for product identification."
+        }
+      ],
+      "suggested_checks": [
+        "Verify manufacturer information",
+        "Check for additional product details"
+      ],
+      "summary": "Missing manufacturer information."
     }
   ],
   "status": "completed",
-  "summary": "20 products flagged for review due to various issues including missing specifications, suspicious content, and extraction artifacts."
+  "summary": "20 products flagged for review due to inconsistencies, missing specifications, or suspicious content."
 }

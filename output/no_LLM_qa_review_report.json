@@ -1,0 +1,178 @@
+{
+  "reviewed_products": 20,
+  "flagged_products": 20,
+  "reviews": [
+    {
+      "product_url": "https://www.safcodental.com/product/orasoothe-reg-sockit-gel",
+      "review_status": "needs_review",
+      "confidence": "low",
+      "issues": [
+        {
+          "field": "specifications_json",
+          "severity": "high",
+          "reason": "Empty specifications despite detailed product description."
+        }
+      ],
+      "suggested_checks": [
+        "Verify if specifications can be extracted from the description.",
+        "Check for any missing product details that should be included."
+      ],
+      "summary": "Empty specifications field despite a comprehensive product description."
+    },
+    {
+      "product_url": "https://www.safcodental.com/product/ossif-i-sem-trade",
+      "review_status": "needs_review",
+      "confidence": "low",
+      "issues": [
+        {
+          "field": "specifications_json",
+          "severity": "high",
+          "reason": "Empty specifications despite detailed product description."
+        }
+      ],
+      "suggested_checks": [
+        "Verify if specifications can be extracted from the description.",
+        "Check for any missing product details that should be included."
+      ],
+      "summary": "Empty specifications field despite a comprehensive product description."
+    },
+    {
+      "product_url": "https://www.safcodental.com/product/ossify-sup-reg-sup-cortical-bone-sheet",
+      "review_status": "needs_review",
+      "confidence": "low",
+      "issues": [
+        {
+          "field": "specifications_json",
+          "severity": "high",
+          "reason": "Empty specifications despite detailed product description."
+        }
+      ],
+      "suggested_checks": [
+        "Verify if specifications can be extracted from the description.",
+        "Check for any missing product details that should be included."
+      ],
+      "summary": "Empty specifications field despite a comprehensive product description."
+    },
+    {
+      "product_url": "https://www.safcodental.com/product/ossify-sup-reg-sup-dbm-cortical-fiber-bone-graft",
+      "review_status": "needs_review",
+      "confidence": "low",
+      "issues": [
+        {
+          "field": "specifications_json",
+          "severity": "high",
+          "reason": "Empty specifications despite detailed product description."
+        }
+      ],
+      "suggested_checks": [
+        "Verify if specifications can be extracted from the description.",
+        "Check for any missing product details that should be included."
+      ],
+      "summary": "Empty specifications field despite a comprehensive product description."
+    },
+    {
+      "product_url": "https://www.safcodental.com/product/ossify-sup-reg-sup-min-demin-cortical-cancellous-bone-graft",
+      "review_status": "needs_review",
+      "confidence": "low",
+      "issues": [
+        {
+          "field": "specifications_json",
+          "severity": "high",
+          "reason": "Empty specifications despite detailed product description."
+        }
+      ],
+      "suggested_checks": [
+        "Verify if specifications can be extracted from the description.",
+        "Check for any missing product details that should be included."
+      ],
+      "summary": "Empty specifications field despite a comprehensive product description."
+    },
+    {
+      "product_url": "https://www.safcodental.com/product/black-maxx-sup-reg-sup",
+      "review_status": "needs_review",
+      "confidence": "low",
+      "issues": [
+        {
+          "field": "specifications_json",
+          "severity": "high",
+          "reason": "Empty specifications despite detailed product description."
+        }
+      ],
+      "suggested_checks": [
+        "Verify if specifications can be extracted from the description.",
+        "Check for any missing product details that should be included."
+      ],
+      "summary": "Empty specifications field despite a comprehensive product description."
+    },
+    {
+      "product_url": "https://www.safcodental.com/product/clearance-item",
+      "review_status": "needs_review",
+      "confidence": "low",
+      "issues": [
+        {
+          "field": "specifications_json",
+          "severity": "high",
+          "reason": "Empty specifications despite detailed product description."
+        }
+      ],
+      "suggested_checks": [
+        "Verify if specifications can be extracted from the description.",
+        "Check for any missing product details that should be included."
+      ],
+      "summary": "Empty specifications field despite a comprehensive product description."
+    },
+    {
+      "product_url": "https://www.safcodental.com/product/halyard-black-nitrile",
+      "review_status": "needs_review",
+      "confidence": "low",
+      "issues": [
+        {
+          "field": "specifications_json",
+          "severity": "high",
+          "reason": "Empty specifications despite detailed product description."
+        }
+      ],
+      "suggested_checks": [
+        "Verify if specifications can be extracted from the description.",
+        "Check for any missing product details that should be included."
+      ],
+      "summary": "Empty specifications field despite a comprehensive product description."
+    },
+    {
+      "product_url": "https://www.safcodental.com/product/microflex-sup-reg-sup-neogard-trade-touch",
+      "review_status": "needs_review",
+      "confidence": "low",
+      "issues": [
+        {
+          "field": "specifications_json",
+          "severity": "high",
+          "reason": "Empty specifications despite detailed product description."
+        }
+      ],
+      "suggested_checks": [
+        "Verify if specifications can be extracted from the description.",
+        "Check for any missing product details that should be included."
+      ],
+      "summary": "Empty specifications field despite a comprehensive product description."
+    },
+    {
+      "product_url": "https://www.safcodental.com/product/true-comfort-reg-blu",
+      "review_status": "needs_review",
+      "confidence": "low",
+      "issues": [
+        {
+          "field": "specifications_json",
+          "severity": "high",
+          "reason": "Empty specifications despite detailed product description."
+        }
+      ],
+      "suggested_checks": [
+        "Verify if specifications can be extracted from the description.",
+        "Check for any missing product details that should be included."
+      ],
+      "summary": "Empty specifications field despite a comprehensive product description."
+    }
+  ],
+  "status": "completed",
+  "summary": "All flagged products have empty specifications despite detailed descriptions, indicating potential extraction issues."
+}

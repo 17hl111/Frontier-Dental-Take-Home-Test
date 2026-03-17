@@ -1,0 +1,21 @@
+{
+  "status": "completed",
+  "overall_assessment": "low_quality",
+  "summary": "The crawl resulted in all products being flagged due to missing specifications, despite having detailed descriptions. This indicates significant extraction issues that need to be addressed.",
+  "strengths": [
+    "No failed scrapes, indicating a reliable scraping process.",
+    "All products are in stock and available for purchase."
+  ],
+  "main_issues": [
+    "All products have empty specifications fields.",
+    "Low confidence in the accuracy of extracted data due to missing specifications."
+  ],
+  "llm_impact": {
+    "observation": "No LLM calls were made during the extraction process, which may have contributed to the missing specifications."
+  },
+  "recommended_next_steps": [
+    "Implement LLM-based extraction for specifications to improve data accuracy.",
+    "Review and enhance the extraction rules to ensure specifications are captured from product descriptions.",
+    "Conduct a follow-up crawl after adjustments to verify improvements in data quality."
+  ]
+}

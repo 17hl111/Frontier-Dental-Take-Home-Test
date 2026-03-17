@@ -87,13 +87,26 @@ python -m src.main run
 Optional CLI flags:
 
 ```bash
-python -m src.main run --max-products 5 --max-pages 2 --disable-llm --headed --fresh
+python -m src.main run --max-products 5 --max-pages 2 --disable-llm --fresh
 ```
 
 ### 5) Run via UI  (Highly recommended)
 
 ```bash
 streamlit run ui_app.py
+```
+
+### 6） Clear old files/cache/checkpoints
+
+```bash
+rm -f output/sample_products.json                                          
+rm -f output/sample_products.csv
+rm -f output/safco_products.db
+rm -f output/qa_review_report.json
+rm -f output/crawl_quality_summary.json
+rm -f data/checkpoints/state.json
+rm -f logs/scraper.log
+rm -f data/raw_html/*
 ```
 
 UI flow:
